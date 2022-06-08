@@ -1,0 +1,56 @@
+<div class="main container center text-center">
+    <div class="mainBox shadow-lg p-4 rounded">
+        <h3>Select Image For The Product Name name</h3>
+        <form [formGroup]="imageForm">
+            
+            <div class="drop">
+                <div class="dropZone" appDragDropListner>
+                    <div class="dropFile">
+                        <input type="file" formControlName="product[0]" name="product[0]" #fileDropRef class="fileDropRef" (change)="OnChange1($event)"
+                            accept="image/*" />
+                        <label for="fileDropRef" class="browseBtn">Upload Image</label>
+                    </div>
+                    <p class="{{profileError?'warning':'p'}}" style="color:red ;">{{profileErr}}</p>
+                    <div *ngIf="image1" class="col-lg-2">
+                        <img [src]="image1" [alt]="name" height="90px" width=90px>
+                    </div>
+                </div>
+
+
+                <div class="dropZone" appDragDropListner>
+                    <div class="dropFile">
+                        <input type="file" #fileDropRef class="fileDropRef" formControlName="product[1]" name="product[1]" (change)="OnChange2($event)"
+                            accept="image/*" />
+                        <label for="fileDropRef" class="browseBtn">Upload Image</label>
+                    </div>
+                    <div *ngIf="image2" class="col-lg-2">
+                        <img [src]="image2" [alt]="name" height="90px" width=90px>
+                    </div>
+                </div>
+                <div class="dropZone" appDragDropListner>
+                    <div class="dropFile">
+                        <input type="file" #fileDropRef class="fileDropRef" formControlName="product[2]" name="product[2]" (change)="OnChange3($event)"
+                            accept="image/*" />
+                        <label for="fileDropRef" class="browseBtn">Upload Image</label>
+                    </div>
+                    <div *ngIf="image3" class="col-lg-2">
+                        <img [src]="image3" [alt]="name" height="90px" width=90px>
+                    </div>
+                </div>
+                <div class="dropZone" appDragDropListner>
+                    <div class="dropFile">
+                        <input type="file" #fileDropRef class="fileDropRef" formControlName="product[3]" name="product[3]" (change)="OnChange4($event)"
+                            accept="image/*" />
+                        <label for="fileDropRef" class="browseBtn">Upload Image</label>
+                    </div>
+                    <div *ngIf="image4" class="col-lg-2">
+                        <img [src]="image4" [alt]="name" height="90px" width=90px>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 mt-3 roboto-400">
+                    <button type="button" class="btn btn-lg btn-success" (click)="OnUpload(imageForm)">Upload</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
